@@ -1,17 +1,17 @@
 {
-  "name": "@remirror/react-components",
-  "description": "react-components utilities for remirror",
+  "name": "@remirror/ui",
+  "description": "ui utilities for remirror",
   "license": "MIT",
   "author": "Ifiok Jr. <ifiokotung@gmail.com>",
-  "homepage": "https://github.com/ifiokjr/remirror/tree/master/@remirror/react-components",
+  "homepage": "https://github.com/ifiokjr/remirror/tree/master/@remirror/ui",
   "repository": {
     "type": "git",
     "url": "https://github.com/ifiokjr/remirror.git",
-    "directory": "@remirror/react-components"
+    "directory": "@remirror/ui"
   },
   "version": "0.4.2-canary.2",
   "main": "lib/index.js",
-  "module": "lib/dist/react-components.esm.js",
+  "module": "lib/dist/ui.esm.js",
   "files": [
     "lib",
     "src"
@@ -30,8 +30,8 @@
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "@emotion/core": "^10.0.15",
-    "@emotion/styled": "^10.0.15",
-    "@remirror/core": "0.4.2-canary.2"
+    "@remirror/core": "0.4.2-canary.2",
+    "theme-ui": "^0.2.21"
   },
   "peerDependencies": {
     "@types/react": "^16.8.22",
@@ -42,6 +42,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "cjs": "lib/dist/react-components.cjs.js",
+  "cjs": "lib/dist/ui.cjs.js",
   "sideEffects": false
 }

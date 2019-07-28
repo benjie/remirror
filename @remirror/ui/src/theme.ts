@@ -1,9 +1,6 @@
 import { ThemeContext } from '@emotion/core';
-import DefaultStyled, { CreateStyled } from '@emotion/styled';
-import { Cast } from '@remirror/core';
 import { Context, useContext } from 'react';
 
-export const styled = Cast<CreateStyled<RemirrorTheme>>(DefaultStyled);
 export type RemirrorTheme = typeof remirrorTheme;
 
 export const remirrorTheme = {
