@@ -664,7 +664,7 @@ export const flattenArray = <GType>(array: any[]): GType[] =>
 export const noop = () => {};
 
 /**
- * A customise deep merge which only merges plain object and Arrays
+ * A customised deep merge which only merges plain object and Arrays
  */
 export const deepMerge = <GType>(objects: Array<Partial<GType>>) => {
   return merge<GType>(objects, { isMergeableObject: isPlainObject });

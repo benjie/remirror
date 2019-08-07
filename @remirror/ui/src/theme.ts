@@ -1,22 +1,31 @@
 import { ThemeContext } from '@emotion/core';
+import { deepMerge } from '@remirror/core';
+import { Theme as RemirrorTheme } from '@styled-system/css';
 import { Context, useContext } from 'react';
 
-export type RemirrorTheme = typeof remirrorTheme;
-
-export const remirrorTheme = {
-  colors: {
-    primary: '#1DA1F2',
-    warn: '#FFAD1F',
-    error: '#E0245E',
-    border: '#99CFEB',
-    plain: '#657786',
-    primaryBackground: '#E8F5FD',
-    icon: '#aab8c2',
+export const baseTheme = {
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'inherit',
+    monospace: 'Menlo, monospace',
   },
-  font: {
-    family: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-    size: '1em',
-    weight: '400',
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    secondary: '#30c',
+    muted: '#f6f6f6',
   },
 };
 
@@ -28,4 +37,4 @@ export const RemirrorThemeContext = ThemeContext as Context<RemirrorTheme>;
 /**
  * Hook which returns the current theme from the context
  */
-export const useTheme = () => useContext(RemirrorThemeContext);
+export const useRemirrorTheme = () => deepMerge([{}, baseTheme, useContext(RemirrorThemeContext) || {}]);
