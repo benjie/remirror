@@ -1,32 +1,13 @@
 import { EMPTY_PARAGRAPH_NODE } from '@remirror/core';
 import { WysiwygEditor, WysiwygEditorProps } from '@remirror/editor-wysiwyg';
-import React, { FC, useState, useCallback } from 'react';
+import React, { FC } from 'react';
 import { formatter } from './code-formatter';
-import { EditorState } from 'prosemirror-state';
-import { RemirrorStateListenerParams } from '@remirror/react';
 
 export const ExampleWysiwygEditor: FC<WysiwygEditorProps> = ({
   initialContent = EMPTY_PARAGRAPH_NODE,
   ...props
 }) => {
-  const [editorState, setEditorState] = useState<EditorState>();
-  const onStateChange = useCallback((params: RemirrorStateListenerParams<any>) => {
-    setEditorState(params.newState);
-  }, []);
-  return (
-    <div>
-      <WysiwygEditor {...props} initialContent={initialContent} autoFocus={true} formatter={formatter} />
-      <WysiwygEditor
-        {...props}
-        onStateChange={onStateChange}
-        value={editorState}
-        editor='markdown'
-        initialContent={initialContent}
-        autoFocus={true}
-        formatter={formatter}
-      />
-    </div>
-  );
+  return <WysiwygEditor {...props} initialContent={initialContent} autoFocus={true} formatter={formatter} />;
 };
 
 export const WYSIWYG_SHOWCASE_CONTENT = {
