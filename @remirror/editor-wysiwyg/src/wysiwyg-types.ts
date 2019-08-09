@@ -72,6 +72,9 @@ export interface WysiwygEditorProps
         | 'editorStyles'
         | 'forceEnvironment'
         | 'suppressHydrationWarning'
+        // Controlled component stuff:
+        | 'onStateChange'
+        | 'value'
       >
     >,
     Pick<CodeBlockExtensionOptions, 'supportedLanguages' | 'defaultLanguage' | 'syntaxTheme' | 'formatter'> {
@@ -98,6 +101,11 @@ export interface WysiwygEditorProps
    * @default false
    */
   removeFontAwesomeCSS?: boolean;
+
+  /**
+   * Set to 'markdown' to enable markdown mode.
+   */
+  editor?: 'wysiwyg' | 'markdown';
 }
 
 export interface ButtonProps {
